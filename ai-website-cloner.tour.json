@@ -1,0 +1,229 @@
+{
+  "id": "ai-website-cloner-template",
+  "title": "AI Website Cloner Template",
+  "description": "A guided tour of the reusable template for reverse-engineering any website and rebuilding it as a pixel-perfect clone using Claude Code with Next.js, shadcn/ui, and Tailwind CSS v4.",
+  "version": "1.0.0",
+  "audience": "Developers and AI Assistants",
+  "prerequisites": ["Basic familiarity with Next.js and React", "Claude Code CLI installed"],
+  "metadata": {
+    "author": "Michael Flannery",
+    "createdAt": "2026-03-27",
+    "tags": ["onboarding", "architecture", "cloning", "next.js"]
+  },
+  "steps": [
+    {
+      "id": "overview",
+      "title": "Welcome to the AI Website Cloner",
+      "description": "This template lets you reverse-engineer any website and rebuild it as a faithful clone. The scaffold includes a modern React framework, a component library with design primitives, utility-first styling with perceptually uniform color tokens, and a powerful cloning skill that orchestrates the entire process. Just fill in the target configuration with a URL and run the skill.",
+      "estimatedTime": 45,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "app-router",
+      "title": "Next.js App Router",
+      "description": "The heart of the application. The root layout configures fonts and global metadata. The home page starts as a placeholder and gets replaced with the cloned site's content. The global stylesheet holds design tokens for colors, spacing, and radius that get overwritten with the target site's exact values during cloning.",
+      "estimatedTime": 60,
+      "focusDirectory": "src/app",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "app-core",
+          "name": "Core App Files",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "src/app/layout.tsx", "type": "file" },
+            { "path": "src/app/page.tsx", "type": "file" },
+            { "path": "src/app/globals.css", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Open the root layout to see font and metadata configuration",
+          "target": "src/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "title": "Component Library",
+      "description": "This directory contains reusable UI primitives like buttons and inputs, plus an icons module where extracted vector icons from the target site are stored as components. During cloning, each page section becomes its own component here, built by parallel agent teams working in isolated branches.",
+      "estimatedTime": 60,
+      "focusDirectory": "src/components",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "ui-primitives",
+          "name": "shadcn/ui Primitives",
+          "color": "#8b5cf6",
+          "items": [
+            { "path": "src/components/ui", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "fill"
+        },
+        {
+          "id": "icons",
+          "name": "Extracted Icons",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "src/components/icons.tsx", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "See the button component with its style variants",
+          "target": "src/components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "id": "research-docs",
+      "title": "Research & Specifications",
+      "description": "This is where extraction artifacts live. The inspection guide defines the methodology for reverse-engineering any site. During cloning, component specs are written here with exact styles, interaction models, and verbatim content — the contracts between extraction and builder agents. Visual references holds screenshots used for QA.",
+      "estimatedTime": 90,
+      "focusDirectory": "docs",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "research",
+          "name": "Research Artifacts",
+          "color": "#10b981",
+          "items": [
+            { "path": "docs/research", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "fill"
+        },
+        {
+          "id": "design-refs",
+          "name": "Visual References",
+          "color": "#ec4899",
+          "items": [
+            { "path": "docs/design-references", "type": "directory" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Read the inspection methodology",
+          "target": "docs/research/INSPECTION_GUIDE.md"
+        }
+      ]
+    },
+    {
+      "id": "clone-skill",
+      "title": "The Clone Website Skill",
+      "description": "The clone-website skill is the orchestrator. It drives a 5-phase pipeline: reconnaissance via browser automation, foundation setup (fonts, colors, assets), component extraction and parallel dispatch to builder agents, merge and assembly, then visual QA against the original. Each phase produces auditable artifacts before moving on.",
+      "estimatedTime": 120,
+      "focusDirectory": ".claude/skills/clone-website",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "skill-file",
+          "name": "Skill Definition",
+          "color": "#ef4444",
+          "items": [
+            { "path": ".claude/skills/clone-website/SKILL.md", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Read the full clone-website skill definition",
+          "target": ".claude/skills/clone-website/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "configuration",
+      "title": "Project Configuration",
+      "description": "Root configuration files define the template's foundation. The clone target is where you specify the URL and scope. The agent instructions contain code style rules and design principles that all builder agents follow. The package manifest declares the tech stack, and the component configuration sets up the design system with perceptually uniform colors.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "target-config",
+          "name": "Clone Target",
+          "color": "#ef4444",
+          "items": [
+            { "path": "TARGET.md", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "agent-config",
+          "name": "Agent Instructions",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "AGENTS.md", "type": "file" },
+            { "path": "CLAUDE.md", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "build-config",
+          "name": "Build Configuration",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "package.json", "type": "file" },
+            { "path": "tsconfig.json", "type": "file" },
+            { "path": "components.json", "type": "file" },
+            { "path": "next.config.ts", "type": "file" }
+          ],
+          "opacity": 0.6,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "See the clone target configuration",
+          "target": "TARGET.md"
+        }
+      ]
+    },
+    {
+      "id": "next-steps",
+      "title": "Start Cloning",
+      "description": "To get started, edit the target configuration with your URL and desired scope, then run the clone skill in Claude Code. The result is a pixel-perfect clone with real content, real assets, and documented specs for every component.",
+      "estimatedTime": 30,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "resources": [
+        {
+          "title": "Next.js App Router Documentation",
+          "url": "https://nextjs.org/docs/app",
+          "type": "documentation"
+        },
+        {
+          "title": "shadcn/ui Components",
+          "url": "https://ui.shadcn.com",
+          "type": "documentation"
+        },
+        {
+          "title": "Tailwind CSS v4",
+          "url": "https://tailwindcss.com/docs",
+          "type": "documentation"
+        }
+      ]
+    }
+  ]
+}
